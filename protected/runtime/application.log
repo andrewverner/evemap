@@ -1,0 +1,64 @@
+2016/11/10 16:48:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /usr/share/nginx/html/denis/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /usr/share/nginx/html/denis/framework/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /usr/share/nginx/html/denis/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /usr/share/nginx/html/denis/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://denis/
+---
+2016/11/10 16:52:48 [error] [php] array_slice() expects parameter 1 to be array, string given (/usr/share/nginx/html/denis/framework/base/CModel.php:287)
+Stack trace:
+#0 /usr/share/nginx/html/denis/framework/base/CModel.php(547): DistanceForm->getValidators()
+#1 /usr/share/nginx/html/denis/framework/gii/generators/form/FormCode.php(92): DistanceForm->getSafeAttributeNames()
+#2 /usr/share/nginx/html/denis/framework/gii/generators/form/templates/default/form.php(29): FormCode->getModelAttributes()
+#3 /usr/share/nginx/html/denis/framework/gii/CCodeModel.php(321): require()
+#4 /usr/share/nginx/html/denis/framework/gii/generators/form/FormCode.php(80): FormCode->render()
+#5 /usr/share/nginx/html/denis/framework/gii/CCodeGenerator.php(162): FormCode->prepare()
+#6 /usr/share/nginx/html/denis/framework/gii/CCodeGenerator.php(63): FormGenerator->prepare()
+#7 /usr/share/nginx/html/denis/framework/web/actions/CInlineAction.php(49): FormGenerator->actionIndex()
+#8 /usr/share/nginx/html/denis/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /usr/share/nginx/html/denis/framework/web/CController.php(286): FormGenerator->runAction()
+#10 /usr/share/nginx/html/denis/framework/web/CController.php(265): FormGenerator->runActionWithFilters()
+#11 /usr/share/nginx/html/denis/framework/web/CWebApplication.php(282): FormGenerator->run()
+#12 /usr/share/nginx/html/denis/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /usr/share/nginx/html/denis/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#14 /usr/share/nginx/html/denis/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/gii/form/index
+in /usr/share/nginx/html/denis/index.php (13)
+2016/11/10 16:54:29 [error] [php] array_slice() expects parameter 1 to be array, string given (/usr/share/nginx/html/denis/framework/base/CModel.php:287)
+Stack trace:
+#0 /usr/share/nginx/html/denis/framework/base/CModel.php(304): DistanceForm->getValidators()
+#1 /usr/share/nginx/html/denis/framework/web/helpers/CHtml.php(1514): DistanceForm->isAttributeRequired()
+#2 /usr/share/nginx/html/denis/framework/web/widgets/CActiveForm.php(600): activeLabelEx()
+#3 /usr/share/nginx/html/denis/protected/views/site/index.php(23): CActiveForm->labelEx()
+#4 /usr/share/nginx/html/denis/framework/web/CBaseController.php(126): require()
+#5 /usr/share/nginx/html/denis/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#6 /usr/share/nginx/html/denis/framework/web/CController.php(869): SiteController->renderFile()
+#7 /usr/share/nginx/html/denis/framework/web/CController.php(782): SiteController->renderPartial()
+#8 /usr/share/nginx/html/denis/protected/controllers/SiteController.php(34): SiteController->render()
+#9 /usr/share/nginx/html/denis/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#10 /usr/share/nginx/html/denis/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /usr/share/nginx/html/denis/framework/web/CController.php(286): SiteController->runAction()
+#12 /usr/share/nginx/html/denis/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#13 /usr/share/nginx/html/denis/framework/web/CWebApplication.php(282): SiteController->run()
+#14 /usr/share/nginx/html/denis/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /usr/share/nginx/html/denis/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#16 /usr/share/nginx/html/denis/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php
+in /usr/share/nginx/html/denis/protected/views/site/index.php (23)
+in /usr/share/nginx/html/denis/protected/controllers/SiteController.php (34)
+in /usr/share/nginx/html/denis/index.php (13)
+2016/11/10 17:05:18 [error] [php] Use of undefined constant E - assumed 'E' (/usr/share/nginx/html/denis/protected/models/DistanceForm.php:38)
+Stack trace:
+#0 /usr/share/nginx/html/denis/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /usr/share/nginx/html/denis/framework/web/CController.php(286): SiteController->runAction()
+#2 /usr/share/nginx/html/denis/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#3 /usr/share/nginx/html/denis/framework/web/CWebApplication.php(282): SiteController->run()
+#4 /usr/share/nginx/html/denis/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /usr/share/nginx/html/denis/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#6 /usr/share/nginx/html/denis/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php
+in /usr/share/nginx/html/denis/protected/models/DistanceForm.php (38)
+in /usr/share/nginx/html/denis/protected/controllers/SiteController.php (39)
+in /usr/share/nginx/html/denis/index.php (13)
