@@ -45,12 +45,37 @@ class SiteController extends Controller
 
 	public function actionTest()
     {
-        $modelsFrom = $modelsTo = SolarSystem::model()->findAll(['limit' => 500]);
+        $mainCr = new CDbCriteria();
+        $mainCr->condition = 'solarSystemID < :ssIDlimit';
+        $mainCr->params = [
+            ':ssIDlimit' => 31000001
+        ];
+        $modelsFrom = $modelsTo = SolarSystem::model()->findAll($mainCr);
         foreach ($modelsFrom as $from) {
             foreach ($modelsTo as $to) {
                 $d = ($to->x - $from->x)**2 + ($to->y - $from->y)**2 + ($to->z - $from->z)**2;
-                $distance = abs(sqrt($d))/1000000000000000;
-                if ($distance != 0 && $distance < 25) echo "{$from->solarSystemName} -> {$to->solarSystemName}: {$distance} ly<br />";
+                $distance = abs(sqrt($d))/9.461e+15;
+                if ($distance != 0 && $distance <= 5) {
+                    //echo "{$from->solarSystemName} -> {$to->solarSystemName}: {$distance} ly<br />";
+                    $cr = new CDbCriteria();
+                    $cr->condition = '(fromID = :fromID and toID = :toID) OR (fromID = :toID and toID = :fromID)';
+                    $cr->params = [
+                        ':fromID' => $from->solarSystemID,
+                        ':toID' => $to->solarSystemID
+                    ];
+                    $model = JumpsRoadMap::model()->find($cr);
+                    if (!$model) {
+                        $model = new JumpsRoadMap();
+                        $model->setAttributes([
+                            'fromID' => $from->solarSystemID,
+                            'toID' => $to->solarSystemID,
+                            'fromName' => $from->solarSystemName,
+                            'toName' => $to->solarSystemName,
+                            'distance' => $distance
+                        ]);
+                        $model->save(false);
+                    }
+                }
             }
         }
     }

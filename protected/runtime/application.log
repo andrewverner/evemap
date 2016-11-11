@@ -62,3 +62,21 @@ REQUEST_URI=/index.php
 in /usr/share/nginx/html/denis/protected/models/DistanceForm.php (38)
 in /usr/share/nginx/html/denis/protected/controllers/SiteController.php (39)
 in /usr/share/nginx/html/denis/index.php (13)
+2016/11/11 10:14:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /usr/share/nginx/html/denis/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /usr/share/nginx/html/denis/framework/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /usr/share/nginx/html/denis/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /usr/share/nginx/html/denis/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://denis/index.php/site/test
+---
+2016/11/11 11:24:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /usr/share/nginx/html/denis/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /usr/share/nginx/html/denis/framework/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /usr/share/nginx/html/denis/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /usr/share/nginx/html/denis/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://denis/index.php/site/test
+---
